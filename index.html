@@ -6,6 +6,44 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello from AWS!!</h1>
+    AWS there commands should run in cp administrater
+sudo apt update
+sudo apt-get install docker.io
+sudo apt install git
+sudo apt install nano
+In git bash
+git init
+git add .
+git commit -m "First commit"
+git branch -M main
+git remote add origin https://github.com/UppuletiHarika/AwsExample-.git
+git push -u origin main
+git clone https://github.com/UppuletiHarika/AwsExample-.git 
+In cp
+Creating docker file converting it to image
+nano Dockerfile
+In dockerfile paste
+FROM nginx:alpine 
+COPY . /usr/share/nginx/html
+sudo docker build -t mywebapp .
+sudo docker run -d -p 80:80 mywebapp
+
+
+MINIKUBE-NGINX (Run below commands in the power shall administrator )
+Minikube start
+Kubectl create deployment mynginx --image=nginx
+Kubectl get deployments
+Kubectl expose deployment mynginx --type=NodePort --port=80 --target-port=80
+Kubectl scale deployment mynginx --replicas=4
+Kubectl get pods
+Kubectl port--forward svc/mynginx 8081:80
+localhost:8081(in web browser )
+In another powershell administrators 
+minikube dashboard  
+Nginx will be open
+Kubectl delete deployment mynginx
+
+
+
 </body>
 </html>
